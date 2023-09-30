@@ -1,0 +1,407 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CKA 문제풀이</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <div class="quiz-container">
+      <div class="quiz" id="quiz-1">
+        <h2>문제 1</h2>
+        <div class="left-align">
+          <p>
+            Create a new ClusterRole named deployment-clusterrole <br />which
+            only allows to create the following resource types:
+          </p>
+          <p>✑ Deployment<br />✑ StatefulSet<br />✑ DaemonSet</p>
+          <p>
+            Create a new ServiceAccount named cicd-token in the existing
+            namespace app-team1.
+          </p>
+          <p>
+            Bind the new ClusterRole deployment-clusterrole to the new
+            ServiceAccount cicd-token, limited to the namespace app-team1.
+          </p>
+        </div>
+        <label for="check-quiz-1">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-1"
+          onchange="markQuizAsLater(1)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-2">
+        <h2>문제 2</h2>
+        <div class="left-align">
+          <p>
+            Create a new NetworkPolicy named allow-port-from-namespace <br />in
+            the existing namespace fubar.
+          </p>
+          <p>
+            Ensure that the new NetworkPolicy allows Pods in namespace internal
+            to connect to port 9000 of Pods in namespace fubar.
+          </p>
+          <p>Further ensure that the new NetworkPolicy:</p>
+          <p>
+            ✑ does not allow access to Pods, which don't listen on port 9000
+          </p>
+          <p>
+            ✑ does not allow access from Pods, which are not in namespace
+            internal
+          </p>
+        </div>
+        <label for="check-quiz-2">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-2"
+          onchange="markQuizAsLater(2)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-3">
+        <h2>문제 3</h2>
+        <div class="left-align">
+          <p>Schedule a pod as follows:</p>
+          <p>✑ Name: nginx-kusc00401</p>
+          <p>✑ Image: nginx</p>
+          <p>✑ Node selector: disk=ssd</p>
+        </div>
+        <label for="check-quiz-3">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-3"
+          onchange="markQuizAsLater(3)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-4">
+        <h2>문제 4</h2>
+        <div class="left-align">
+          <p>
+            Check to see how many nodes are ready (not including nodes tainted
+            NoSchedule) and
+          </p>
+          <p>write the number to /opt/KUSC00402/kusc00402.txt.</p>
+        </div>
+        <label for="check-quiz-4">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-4"
+          onchange="markQuizAsLater(4)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-5">
+        <h2>문제 5</h2>
+        <div class="left-align">
+          <p>Schedule a Pod as follows:</p>
+          <p>✑ Name: kucc8</p>
+          <p>✑ App Containers: 2</p>
+          <p>✑ Container Name/Images:</p>
+          <p>- nginx</p>
+          <p>- consul</p>
+        </div>
+        <label for="check-quiz-5">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-5"
+          onchange="markQuizAsLater(5)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-6">
+        <h2>문제 6</h2>
+        <div class="left-align">
+          <p>
+            From the pod label name=overloaded-cpu, find pods running high CPU
+            workloads and
+          </p>
+          <p>write the name of the pod consuming</p>
+          <p>
+            most CPU to the file /opt/ KUTR00401/KUTR00401.txt (which already
+            exists).
+          </p>
+        </div>
+        <label for="check-quiz-6">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-6"
+          onchange="markQuizAsLater(6)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-7">
+        <h2>문제 7</h2>
+        <div class="left-align">
+          <p>
+            Reconfigure the existing deployment front-end and add a port
+            specification
+          </p>
+          <p>
+            named http exposing port 80/tcp of the existing container nginx.
+          </p>
+          <p>
+            Create a new service named front-end-svc exposing the container port
+            http.
+          </p>
+          <p>
+            configure the new service to also expose the individual Pods via a
+          </p>
+          <p>NodePort on the nodes on which they are scheduled.</p>
+        </div>
+        <label for="check-quiz-7">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-7"
+          onchange="markQuizAsLater(7)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-8">
+        <h2>문제 8</h2>
+        <p>Scale the deployment presentation to 3 pods.</p>
+
+        <label for="check-quiz-2">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-8"
+          onchange="markQuizAsLater(8)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-9">
+        <h2>문제 9</h2>
+        <div class="left-align">
+          <p>Create a new nginx Ingress resource as follows:</p>
+          <p>✑ Name: pong</p>
+          <p>✑ Namespace: ing-internal</p>
+          <p>✑ Exposing service hello on path /hello using service port 5678</p>
+        </div>
+        <label for="check-quiz-9">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-9"
+          onchange="markQuizAsLater(9)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-10">
+        <h2>문제 10</h2>
+        <div class="left-align">
+          <p>Create a new PersistentVolumeClaim:</p>
+          <p>✑ Name: pv-volume</p>
+          <p>✑ Class: csi-hostpath-sc</p>
+          <p>✑ Capacity: 10Mi</p>
+          <p>
+            Create a new Pod which mounts the PersistentVolumeClaim as a volume:
+          </p>
+          <p>✑ Name: web-server</p>
+          <p>✑ Image: nginx</p>
+          <p>✑ Mount path: /usr/share/nginx/html</p>
+          <p>
+            Configure the new Pod to have ReadWriteOnce access on the volume.
+          </p>
+          <p>
+            Finally, using kubectl edit or kubectl patch expand the
+            PersistentVolumeClaim
+          </p>
+          <p>to a capacity of 70Mi and record that change.</p>
+        </div>
+        <label for="check-quiz-10">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-10"
+          onchange="markQuizAsLater(10)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-11">
+        <h2>문제 11</h2>
+        <div class="left-align">
+          <p>Create a persistent volume with name app-data,</p>
+          <p>of capacity 2Gi and access mode ReadOnlyMany.</p>
+          <p>
+            The type of volume is hostPath and its location is /srv/app- data.
+          </p>
+        </div>
+        <label for="check-quiz-11">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-11"
+          onchange="markQuizAsLater(11)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-12">
+        <h2>문제 12</h2>
+        <div class="left-align">
+          <p>Monitor the logs of pod foo and:</p>
+          <p>✑ Extract log lines corresponding to error file-not-found</p>
+          <p>✑ Write them to /opt/KUTR00101/foo</p>
+        </div>
+        <label for="check-quiz-12">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-12"
+          onchange="markQuizAsLater(12)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-13">
+        <h2>문제 13</h2>
+        <div class="left-align">
+          <p>
+            Set the node named ek8s-node-0 as unavailable and reschedule all the
+            pods running on it.
+          </p>
+        </div>
+        <label for="check-quiz-13">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-13"
+          onchange="markQuizAsLater(13)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-14">
+        <h2>문제 14</h2>
+        <div class="left-align">
+          <p>cluster 업그레이드문제</p>
+        </div>
+        <label for="check-quiz-14">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-14"
+          onchange="markQuizAsLater(14)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-15">
+        <h2>문제 15</h2>
+        <div class="left-align">
+          <p>etcd backup 문제</p>
+        </div>
+        <label for="check-quiz-15">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-15"
+          onchange="markQuizAsLater(15)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-16">
+        <h2>문제 16</h2>
+        <div class="left-align">
+          <p>
+            Add a sidecar container named sidecar, using the busybox image, to
+            the existing Pod big-corp-app. The new sidecar container has to run
+            the following command:
+          </p>
+          <p>/bin/sh -c "tail -n+1 -f /var/log/big-corp-app.log"</p>
+          <p>
+            Use a Volume, mounted at /var/log, to make the log file
+            big-corp-app.log available to the sidecar container.
+          </p>
+        </div>
+        <label for="check-quiz-16">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-16"
+          onchange="markQuizAsLater(16)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <div class="quiz" id="quiz-17">
+        <h2>문제 17</h2>
+        <div class="left-align">
+          <p>
+            A Kubernetes worker node, named wk8s-node-0 is in state NotReady.
+          </p>
+          <p>
+            Investigate why this is the case, and perform any appropriate steps
+            to bring the node to a Ready state, ensuring that any changes are
+            made permanent.
+          </p>
+        </div>
+        <label for="check-quiz-17">문제 나중에 풀기</label>
+        <input
+          type="checkbox"
+          id="check-quiz-17"
+          onchange="markQuizAsLater(17)"
+        />
+        <button onclick="previousQuiz()">이전</button>
+        <button onclick="nextQuiz()">다음</button>
+      </div>
+
+      <!-- 나머지 퀴즈들도 동일한 방식으로 추가 -->
+
+      <div class="quiz-menu">
+        <p class="quiz-link">문제 바로가기</p>
+        <ul class="horizontal-menu">
+          <li><a href="#" onclick="goToQuiz(1)">( 1 )</a></li>
+          <li><a href="#" onclick="goToQuiz(2)">( 2 )</a></li>
+          <li><a href="#" onclick="goToQuiz(3)">( 3 )</a></li>
+          <li><a href="#" onclick="goToQuiz(4)">( 4 )</a></li>
+          <li><a href="#" onclick="goToQuiz(5)">( 5 )</a></li>
+          <li><a href="#" onclick="goToQuiz(6)">( 6 )</a></li>
+          <li><a href="#" onclick="goToQuiz(7)">( 7 )</a></li>
+          <li><a href="#" onclick="goToQuiz(8)">( 8 )</a></li>
+          <li><a href="#" onclick="goToQuiz(9)">( 9 )</a></li>
+          <li><a href="#" onclick="goToQuiz(10)">( 10 )</a></li>
+          <li><a href="#" onclick="goToQuiz(11)">( 11 )</a></li>
+          <li><a href="#" onclick="goToQuiz(12)">( 12 )</a></li>
+          <li><a href="#" onclick="goToQuiz(13)">( 13 )</a></li>
+          <li><a href="#" onclick="goToQuiz(14)">( 14 )</a></li>
+          <li><a href="#" onclick="goToQuiz(15)">( 15 )</a></li>
+          <li><a href="#" onclick="goToQuiz(16)">( 16 )</a></li>
+          <li><a href="#" onclick="goToQuiz(17)">( 17 )</a></li>
+          <!-- 나머지 퀴즈 메뉴 아이템들 추가 -->
+        </ul>
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
