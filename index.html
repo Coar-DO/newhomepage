@@ -151,10 +151,28 @@
             </div>
             <div class="col-12">
              
-    <img src="images/Portainer.PNG" />
-    <img src="images/grafana.PNG" />
-    <img src="images/jenkins.PNG" />
-    <img src="images/prome.PNG" />
+    <head>
+                <style>
+                    .image-container {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                    }
+                    .image-container img {
+                        width: 48%; /* 이미지 폭을 조절 */
+                        margin: 1%; /* 이미지 간격을 조절 */
+                        max-width: 100%; /* 이미지가 컨테이너를 넘어가지 않도록 설정 */
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="image-container">
+                    <img src="images/Portainer.PNG" alt="Portainer">
+                    <img src="images/grafana.PNG" alt="Grafana">
+                    <img src="images/jenkins.PNG" alt="Jenkins">
+                    <img src="images/prome.PNG" alt="Prometheus">
+                </div>
+            </body>
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
